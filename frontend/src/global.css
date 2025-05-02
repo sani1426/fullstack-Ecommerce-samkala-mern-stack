@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: poppins;
+
+  src: url(../public/Poppins/Poppins-Medium.ttf) format(true type),
+}
+@font-face {
+  font-family: poppins-bold;
+
+  src: url(../public/Poppins/Poppins-Bold.ttf) format(truetype)
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+body{
+  @apply bg-slate-100
+}
+
+:root {
+  --font-poppins: poppins;
+  --font-poppins-bold : poppins-bold;
+  
+}
+
+
+.flex-center{
+  @apply flex justify-center items-center
+}
+.flex-between{
+  @apply flex justify-between items-center
+}
+.flex-start{
+  @apply flex justify-start items-center
+}
+
+.my-gradient {
+  @apply  bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200  
+}
+.my-hover {
+  @apply bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200   hover:from-primary-500  hover:via-primary-400  hover:to-primary-300  transition-all duration-500
+}
+
+
+.active{
+    opacity: 1;
+  pointer-events: visible;
+}
