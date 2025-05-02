@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'
 
 async function userSignUpController(req, res) {
   try {
-    const { name, email, password  } = req.body
+    const { name, email, password , gender  } = req.body
 
     if (!name || !email || !password) {
       res.status(400).json({
@@ -34,6 +34,7 @@ async function userSignUpController(req, res) {
       email,
       role : "GENERAL",
       password: hashedPassword,
+      gender,
     })
 
     const newUser = await user.save()

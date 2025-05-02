@@ -27,35 +27,33 @@ async function userSignInController(req, res) {
     const checkPassword = bcrypt.compareSync(password, user.password)
 
     if (checkPassword) {
-        const tokenData = {
-            _id : user._id ,
-            name: user.name,
-            email: user.email,
-        };
-        const tokenOption ={
-            httpOnly :true ,
-            secure : true
-        };
-        const token = jwt.sign(tokenData, process.env.JWT_SECRET , { expiresIn: '10h' });
-        
-    res.status(200).cookie("token" , token , tokenOption).json({
+      const tokenData = {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      }
+      const tokenOption = {
+        httpOnly: true,
+        secure: true,
+      }
+      const token = jwt.sign(tokenData, process.env.JWT_SECRET, {
+        expiresIn: '40h',
+      })
+
+      res.status(200).cookie('token', token, tokenOption).json({
         data: token,
         success: true,
         error: false,
         message: 'Login successfully✨✨',
       })
-
     } else {
-
-res.status(400).json({
-    message: 'password is wrong 😡😡',
-    error: true,
-    success: false,
-  })
-  throw new Error('user Not Found 😒😒')
-}
-
- 
+      res.status(400).json({
+        message: 'password is wrong 😡😡',
+        error: true,
+        success: false,
+      })
+      throw new Error('user Not Found 😒😒')
+    }
   } catch (error) {
     res.status(500).json({
       message: 'Server Error 🤢🤢',
@@ -65,10 +63,4 @@ res.status(400).json({
   }
 }
 
-
-
-
 export default userSignInController
-
-
-

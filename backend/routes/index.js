@@ -4,14 +4,17 @@ import userSignInController from '../controllers/userSignIn.js'
 import userDetailsController from '../controllers/userDetails.js'
 import authToken from '../middlewares/authToken.js'
 import userLogOutController from '../controllers/userLogOut.js'
+import GetAllUsersController from '../controllers/allUsers.js'
 
-const router = express.Router();
+const router = express.Router()
+
+router.post('/signup', userSignUpController)
+router.post('/signin', userSignInController)
+router.get('/user-details', authToken, userDetailsController)
+router.get('/logout', userLogOutController)
 
 
-router.post("/signup" , userSignUpController)
-router.post("/signin" , userSignInController)
-router.get("/user-details" , authToken , userDetailsController)
-router.get("/logout" , userLogOutController)
+//   Admin Routes //
+router.get('/' ,authToken , GetAllUsersController)
 
-
-export default  router
+export default router

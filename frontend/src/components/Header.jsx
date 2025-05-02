@@ -82,7 +82,7 @@ const Header = () => {
             ) : (
               <img
                 onClick={toggleDropMenu}
-                src='/images/blue-circle-with-white-user_78370-4707.avif'
+                src={`${user?.gender === "men" ? "https://avatar.iran.liara.run/public/boy" : "https://avatar.iran.liara.run/public/girl"}`}
                 alt=''
                 className='dropdown-trigger h-10 w-10 rounded-full'
               />

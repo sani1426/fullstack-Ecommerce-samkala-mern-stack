@@ -13,6 +13,7 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
     profilePic: '',
+    gender : "men"
   });
 
   const handleOnChange = (e) => {
@@ -23,6 +24,7 @@ const SignUp = () => {
         [name]: value,
       };
     });
+    console.log(data);
   };
 
   const handleSubmit = async (e) => {
@@ -169,6 +171,16 @@ const SignUp = () => {
                   className='h-full w-full bg-transparent outline-none'
                 />
               </div>
+            </div>
+            <div className="grid my-3 gap-1">
+              <label className='text-lg' htmlFor="gender">gender :</label>
+              <select
+              value={data.gender}
+              onChange={handleOnChange}
+               className='py-2 px-4 bg-gray-100' name="gender" id="gender">
+                <option  value="men">men</option>
+                <option  value="women">women</option>
+              </select>
             </div>
 
             <button className='mx-w-[150px] my-hover mb-3 mt-6 w-full rounded-full px-6 py-2 text-xl text-white hover:scale-95'>

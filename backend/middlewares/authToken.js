@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 async function authToken(req, res, next) {
   try {
     const token = req.cookies?.token || req.header
-
+console.log("aut token",token);
     if (!token) {
       return res.status(400).json({
         message: 'user not logged in 😱😱',
