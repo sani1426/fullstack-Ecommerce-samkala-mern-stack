@@ -44,7 +44,7 @@ body{
   @apply  bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200  
 }
 .my-hover {
-  @apply bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200   hover:from-primary-500  hover:via-primary-400  hover:to-primary-300  transition-all duration-500
+  @apply bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200   hover:from-primary-200  hover:via-primary-300  hover:to-primary-400  transition-all duration-500
 }
 
 
