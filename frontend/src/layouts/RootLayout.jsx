@@ -22,7 +22,7 @@ const RootLayout = () => {
     //   Context Api ... //
     const dataApi = await dataResponse.json();
     if (dataApi.success) {
-      setUser(dataApi?.data);
+      setUser(dataApi.data);
     }
 
     //  Redux and Redux-Tolkit ... //

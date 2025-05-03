@@ -6,10 +6,13 @@ import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 import { toast } from 'sonner';
 import SummaryApi from '../common';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   const { user } = useAppContext();
+  useEffect(() => {
+ console.log(user);
+  }, [])
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleDropMenu = () => {
     setMenuOpen(!menuOpen);

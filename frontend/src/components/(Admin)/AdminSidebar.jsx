@@ -1,6 +1,6 @@
 
 import {Link} from 'react-router-dom'
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../../context/AppContext';
 
 
 

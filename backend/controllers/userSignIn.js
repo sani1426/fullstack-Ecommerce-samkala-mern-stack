@@ -2,6 +2,7 @@ import UserModel from '../models/userModel.js'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
+
 async function userSignInController(req, res) {
   try {
     const { email, password } = req.body
@@ -26,19 +27,16 @@ async function userSignInController(req, res) {
 
     const checkPassword = bcrypt.compareSync(password, user.password)
 
-    if (checkPassword) {
+    if(checkPassword){
       const tokenData = {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
+          _id : user._id,
+          email : user.email,
       }
       const tokenOption = {
-        httpOnly: true,
-        secure: true,
-      }
-      const token = jwt.sign(tokenData, process.env.JWT_SECRET, {
-        expiresIn: '40h',
-      })
+        httpOnly : true,
+        secure : true
+    }
+      const token = await  jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 8 });
 
       res.status(200).cookie('token', token, tokenOption).json({
         data: token,

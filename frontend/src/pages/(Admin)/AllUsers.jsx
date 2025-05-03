@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react"
 import SummaryApi from '../../common/index.js'
 import moment from 'moment'
-
-
+import { MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import ChangeUserRole from "../../components/(Admin)/ChangeUserRole.jsx";
 
 const AllUsers = () => {
+
+  
 
 const [allUsers , setAllUsers]=useState([])
 
 const fetchAllUsers = async ()=> {
 
     const result = await fetch(SummaryApi.AllUsers.url , {
-      methode : SummaryApi.AllUsers.methode ,
+      methode : SummaryApi.AllUsers.method ,
       credentials : "include"
     })
 
@@ -39,6 +42,7 @@ useEffect(() => {
               <th>Gender</th>
               <th>Role</th>
               <th>Created Date</th>
+              <th>Action</th>
            </tr>
             </thead>
             <tbody className="text-center ">
@@ -64,12 +68,21 @@ useEffect(() => {
                           <td>
                               {moment(user?.createdAt).format('ll')}
                           </td>
+                          <td className="flex-center gap-2">
+                              <button className="bg-green-100 p-2 rounded-full cursor-pointer hover:bg-green-500 transition-all hover:text-white">
+                                <MdEdit />
+                              </button>
+                              <button className="bg-red-100 p-2 rounded-full cursor-pointer hover:bg-red-500 transition-all hover:text-white">
+                                <MdDelete />
+                              </button>
+                          </td>
                         </tr>
                       )
                     })
                   }
             </tbody>
            </table>
+           <ChangeUserRole   />
     </div>
   )
 }
