@@ -1,19 +1,14 @@
 import { useEffect, useState } from 'react';
 import SummaryApi from '../../common/index.js';
 import moment from 'moment';
-import { MdEdit } from 'react-icons/md';
+
 import { MdDelete } from 'react-icons/md';
-import ChangeUserRole from '../../components/(Admin)/ChangeUserRole.jsx';
+
+import UpdateUserModal from '../../components/(Admin)/UpdateUserModal.jsx';
 
 const AllUsers = () => {
   const [allUsers, setAllUsers] = useState([]);
-  const [openRoleUpdate, setOpenRoleUpdate] = useState(false);
-  const [updatedUserDetail, setUpdateUserDetail] = useState({
-    email: '',
-    name: '',
-    role: '',
-    gender: '',
-  });
+
 
   const fetchAllUsers = async () => {
     const result = await fetch(SummaryApi.AllUsers.url, {
@@ -56,15 +51,14 @@ const AllUsers = () => {
                 <td>{user?.role}</td>
                 <td>{moment(user?.createdAt).format('ll')}</td>
                 <td className='flex-center gap-2'>
-                  <button
-                    onClick={() => {
-                      setUpdateUserDetail(user)
-                      setOpenRoleUpdate(true);
-                    }}
-                    className='cursor-pointer rounded-full bg-green-100 p-2 transition-all hover:bg-green-500 hover:text-white'
-                  >
-                    <MdEdit />
-                  </button>
+      
+                  <UpdateUserModal 
+                    userId={user._id}
+                    name={user.name}
+                    email={user.email}
+                    gender={user.gender}
+                    getAllUsers={fetchAllUsers}
+                  />
                   <button className='cursor-pointer rounded-full bg-red-100 p-2 transition-all hover:bg-red-500 hover:text-white'>
                     <MdDelete />
                   </button>
@@ -75,16 +69,6 @@ const AllUsers = () => {
         </tbody>
       </table>
 
-      {openRoleUpdate && (
-        <ChangeUserRole
-        userId={updatedUserDetail._id}
-          name={updatedUserDetail.name}
-          email={updatedUserDetail.email}
-          gender={updatedUserDetail.gender}
-          onClose={setOpenRoleUpdate}
-          getAllUsers={fetchAllUsers}
-        />
-      )}
     </div>
   );
 };
