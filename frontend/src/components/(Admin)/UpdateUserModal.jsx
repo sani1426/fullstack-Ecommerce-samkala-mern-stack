@@ -17,6 +17,12 @@ const UpdateUserModal = ({
   const showModal = () => {
     setIsModalOpen(true);
   };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
 
   const [useRole , setUseRole] =useState(role)
@@ -65,6 +71,9 @@ const UpdateUserModal = ({
       <Modal
         title='Update User'
         open={isModalOpen}
+        footer={null}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
     
     <div className=" w-full h-full z-10 flex-center ">

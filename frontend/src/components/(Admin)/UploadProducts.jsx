@@ -56,6 +56,7 @@ const UploadModal = () => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
         <form className='my-4 flex flex-col gap-4 overflow-y-auto'>
           <div className='grid'>
@@ -118,7 +119,7 @@ const UploadModal = () => {
               </div>
             </label>
           </div>
-          <div className=''>
+          <div className='flex-center gap-2'>
             {
               data?.productImages.length > 0 ? (
              
@@ -134,7 +135,7 @@ const UploadModal = () => {
               ))
              
               ):(
-                <p>upload product</p>
+                <p className='text-sm text-red-500'>please upload product image</p>
               )
             }
          
