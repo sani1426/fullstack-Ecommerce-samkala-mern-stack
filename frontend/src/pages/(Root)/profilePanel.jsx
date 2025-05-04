@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
 import { useAppContext } from '../../context/AppContext';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const ProfilePanel = () => {
   const { user } = useAppContext();
+  const navigate = useNavigate()
+
+  useEffect(() => {
+if(!user){
+  navigate("/login")
+}
+    
+  }, [user])
+  
 
   return (
     <div className='flex min-h-[calc(100vh-120px)]'>
@@ -29,13 +39,17 @@ const ProfilePanel = () => {
           </div>
         </div>
        
+        {
+    user?.role === "ADMIN" && (
+      <div className="">
+      <nav className='grid p-4'>
+        <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-users">All Users</Link>
+        <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-products">Products</Link>
+      </nav>
+    </div>
+    )
+   }
 
-              <div className="">
-                <nav className='grid p-4'>
-                  <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-users">All Users</Link>
-                  <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-products">Products</Link>
-                </nav>
-              </div>
       </aside>
 
 

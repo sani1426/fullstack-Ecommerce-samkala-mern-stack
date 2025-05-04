@@ -1,25 +1,24 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { userROLE } from '../../common/role.js'
 import { userGender } from '../../common/role.js'
 import { IoMdClose } from "react-icons/io";
 import SummaryApi from '../../common/index.js';
 
 
+
 const ChangeUserRole = ({
-    name , email , role , onClose , gender
+    name , email , role , onClose , gender ,userId , getAllUsers
 }) => {
 
+   
     const [useRole , setUseRole] =useState(role)
     const [useGender , setUseGender] =useState(gender)
-    useEffect(() => {
-      setUseGender(gender)
-      setUseRole(role)
-    
-    }, [])
-    
+
+  
 
     const handleOnChangeRole = (e)=>{
         setUseRole(e.target.value)
+
     }
     const handleOnChangeGender = (e)=>{
         setUseGender(e.target.value)
@@ -34,12 +33,19 @@ const ChangeUserRole = ({
                     },
 
                         body : JSON.stringify({
-                            role : useRole 
+                            userId : userId ,
+                            role : useRole ,
+                            gender : useGender
+           
                         })
+                        
                 })
 
                 const response = await result.json()
-                console.log(response);
+                getAllUsers()
+                onClose(false)
+               
+            
     }
 
   return (
@@ -79,7 +85,7 @@ const ChangeUserRole = ({
 </select>
     </div>
   <button
-  onClick={ChangeUserRole}
+  onClick={updateUserRole}
   className='w-full mx-auto p-2 rounded-full my-hover text-white'>Change Role</button>
     </div>
 

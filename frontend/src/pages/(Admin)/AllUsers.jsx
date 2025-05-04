@@ -35,7 +35,7 @@ const AllUsers = () => {
     <div className='py-4 pr-4 md:pl-[21rem]'>
       <table className='user-table w-full'>
         <thead>
-          <tr>
+          <tr className='bg-black text-white'>
             <th>Sr.</th>
             <th>Name</th>
             <th>Email</th>
@@ -77,10 +77,12 @@ const AllUsers = () => {
 
       {openRoleUpdate && (
         <ChangeUserRole
+        userId={updatedUserDetail._id}
           name={updatedUserDetail.name}
           email={updatedUserDetail.email}
           gender={updatedUserDetail.gender}
           onClose={setOpenRoleUpdate}
+          getAllUsers={fetchAllUsers}
         />
       )}
     </div>

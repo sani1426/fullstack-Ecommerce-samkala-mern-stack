@@ -30,13 +30,18 @@ const AdminSidebar = () => {
       </div>
     </div>
    
+   {
+    user?.role === "ADMIN" && (
+      <div className="">
+      <nav className='grid p-4'>
+        <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-users">All Users</Link>
+        <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-products">Products</Link>
+      </nav>
+    </div>
+    )
+   }
 
-          <div className="">
-            <nav className='grid p-4'>
-              <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-users">All Users</Link>
-              <Link className='py-2 px-4 hover:bg-slate-100 transition' to="/admin/all-products">Products</Link>
-            </nav>
-          </div>
+      
   </aside>
   )
 }
