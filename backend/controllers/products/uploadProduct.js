@@ -16,15 +16,7 @@ async function uploadProductController(req , res){
               })
         }
 
-        const uploadProduct = new ProductModel({
-            productName : req.body.productName ,
-            brandName : req.body.brandName ,
-            category : req.body.category ,
-            productImage : req.body.productImage ,
-            description : req.body.description ,
-            price : req.body.price ,
-            sellingPrice : req.body.sellingPrice
-        })
+        const uploadProduct = new ProductModel(req.body)
 
         const savedProduct = await uploadProduct.save();
 
@@ -47,3 +39,15 @@ async function uploadProductController(req , res){
 
 
 export default uploadProductController
+
+
+
+// {
+//     productName : req.body.productName ,
+//     brandName : req.body.brandName ,
+//     category : req.body.category ,
+//     productImage : req.body.productImage ,
+//     description : req.body.description ,
+//     price : req.body.price ,
+//     sellingPrice : req.body.sellingPrice
+// }

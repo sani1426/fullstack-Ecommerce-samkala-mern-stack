@@ -74,7 +74,7 @@ const UploadModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+console.log(data);
     const response = await fetch(SummaryApi.CreateProduct.url, {
       method: SummaryApi.CreateProduct.method,
       credentials: 'include',
@@ -91,7 +91,6 @@ const UploadModal = () => {
         style: {
           background: 'green',
           color: 'white',
-          fontSize : '1.3rem'
         },
       });
       setIsModalOpen(false);
