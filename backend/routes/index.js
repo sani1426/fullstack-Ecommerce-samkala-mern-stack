@@ -21,7 +21,7 @@ router.get('/logout', userLogOutController)
 //   Admin Routes user //
 router.get('/' ,authToken , GetAllUsersController)
 router.post('/update-user'  , updateUserController)
-router.get('/delete/:id'  , AdminDeleteUser)
+router.delete('/delete/:id'  , AdminDeleteUser)
 
 
 export default router

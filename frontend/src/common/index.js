@@ -27,7 +27,7 @@ const SummaryApi = {
     },
     DeleteUser : {
         url : `${backendDomain}/api/users/delete`,
-        method : "get"
+        method : "delete"
     },
     CreateProduct : {
         url : `${backendDomain}/api/products/create`,
@@ -36,6 +36,10 @@ const SummaryApi = {
     GetAllProduct : {
         url : `${backendDomain}/api/products`,
         method : "get"
+    },
+    EditProduct : {
+        url : `${backendDomain}/api/products/edit-product`,
+        method : "post"
     },
 }
 

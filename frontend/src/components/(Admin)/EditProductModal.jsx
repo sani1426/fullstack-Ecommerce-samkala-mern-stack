@@ -89,8 +89,8 @@ const handleUploadProduct = async(e) => {
   const handleSubmit = async(e) =>{
     e.preventDefault()
     
-    const response = await fetch(SummaryApi.updateProduct.url,{
-      method : SummaryApi.updateProduct.method,
+    const response = await fetch(`${SummaryApi.EditProduct.url}/${productData._id}`,{
+      method : SummaryApi.EditProduct.method,
       credentials : 'include',
       headers : {
         "content-type" : "application/json"
@@ -188,8 +188,8 @@ const handleUploadProduct = async(e) => {
                                    <img 
                                      src={el} 
                                      alt={el} 
-                                     width={80} 
-                                     height={80}  
+                                     width={70} 
+                                     height={70}  
                                      className='bg-slate-100 border cursor-pointer'  
                                      onClick={()=>{
                                        setOpenFullScreenImage(true)

@@ -202,8 +202,8 @@ const UploadModal = ({fetchAll}) => {
                   <img
                     src={item}
                     alt=''
-                    width={100}
-                    height={100}
+                    width={70}
+                    height={70}
                     className='cursor-pointer border bg-slate-100'
                     onClick={() => {
                       setOpenFullScreen(true);

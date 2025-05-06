@@ -22,6 +22,17 @@ const AllUsers = () => {
     console.log(allUsers);
   };
 
+
+  // const deleteUser = async (id) => {
+  //   const result = await fetch(`${SummaryApi.DeleteUser.url}/${id}`, {
+  //     methode: SummaryApi.DeleteUser.method,
+  //     credentials: 'include',
+  //   });
+
+  //   const response = await result.json();
+  //     fetchAllUsers()
+  // };
+
   useEffect(() => {
     fetchAllUsers();
   }, []);
@@ -59,7 +70,9 @@ const AllUsers = () => {
                     gender={user.gender}
                     getAllUsers={fetchAllUsers}
                   />
-                  <button className='cursor-pointer rounded-full bg-red-100 p-2 transition-all hover:bg-red-500 hover:text-white'>
+                  <button
+                  // onClick={()=>deleteUser(user?.id)}
+                  className='cursor-pointer rounded-full bg-red-100 p-2 transition-all hover:bg-red-500 hover:text-white'>
                     <MdDelete />
                   </button>
                 </td>
