@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "scripts": {
+    "seed" : "npx tsx ./lib/seed.js" ,
     "start" : "node index.js" ,
     "dev": "nodemon index.js"
   },

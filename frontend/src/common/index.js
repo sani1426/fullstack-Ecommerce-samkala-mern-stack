@@ -29,6 +29,11 @@ const SummaryApi = {
         url : `${backendDomain}/api/users/delete`,
         method : "delete"
     },
+
+
+    //  product Routes 
+
+
     CreateProduct : {
         url : `${backendDomain}/api/products/create`,
         method : "post"
@@ -40,6 +45,10 @@ const SummaryApi = {
     EditProduct : {
         url : `${backendDomain}/api/products/edit-product`,
         method : "post"
+    },
+    GetCategories : {
+        url : `${backendDomain}/api/products/all-categories`,
+        method : "get"
     },
 }
 

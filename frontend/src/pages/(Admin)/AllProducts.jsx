@@ -29,7 +29,7 @@ const AllProducts = () => {
 
         
         </div>
-        <div className="flex items-center gap-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-4 h-[calc(100vh-190px)] overflow-y-scroll">
               {
                 allProductsData?.map(product => (
           <AdminProductCard data={product} key={product?._id} fetchAll={fetchAllProducts} />
@@ -37,6 +37,7 @@ const AllProducts = () => {
               }
           </div>
       </div>
+     
     </div>
   );
 };
