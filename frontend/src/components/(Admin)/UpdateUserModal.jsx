@@ -11,8 +11,6 @@ const UpdateUserModal = ({
     name , email , role , gender ,userId , getAllUsers
 }) => {
 
-
-    console.log(name , email , role , gender , userId);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);

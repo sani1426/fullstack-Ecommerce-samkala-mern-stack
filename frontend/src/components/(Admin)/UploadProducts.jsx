@@ -8,7 +8,7 @@ import { MdDelete } from 'react-icons/md';
 import SummaryApi from '../../common/index';
 import { toast } from 'sonner';
 
-const UploadModal = () => {
+const UploadModal = ({fetchAll}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -74,7 +74,7 @@ const UploadModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-console.log(data);
+
     const response = await fetch(SummaryApi.CreateProduct.url, {
       method: SummaryApi.CreateProduct.method,
       credentials: 'include',
@@ -93,6 +93,7 @@ console.log(data);
           color: 'white',
         },
       });
+      fetchAll()
       setIsModalOpen(false);
     }
 
@@ -250,7 +251,6 @@ console.log(data);
               name='sellingPrice'
               onChange={handleChange}
               className='rounded border bg-slate-100 p-2'
-
             />
           </div>
 
