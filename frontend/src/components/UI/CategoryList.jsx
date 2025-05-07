@@ -33,8 +33,8 @@ const CategoryList = () => {
           return (
 
 
-            <Link to={`/category/${cat?.category}`}   key={index} className='cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 rounded-full pb-5' >
-              <div className='flex-center h-16 w-16 overflow-hidden rounded-full bg-slate-200 p-4 md:h-20 md:w-20'>
+            <Link to={`/category/${cat?.category}`}   key={index} className='cursor-pointer shadow-sm hover:shadow-md hover:shadow-grown-50 transition-all duration-300 rounded-full pb-5 ' >
+              <div className='flex-center h-16 w-16 overflow-hidden border-2 border-grown-50 rounded-full bg-slate-200 p-4 md:h-20 md:w-20'>
                 <img
                   src={cat?.productImages[0]}
                   alt={cat?.category}

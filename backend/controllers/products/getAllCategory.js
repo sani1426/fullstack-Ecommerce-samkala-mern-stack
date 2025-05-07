@@ -1,6 +1,6 @@
 import ProductModel from '../../models/ProductModel.js'
 
-async function getAllCategories(req, res) {
+async function getAllCategoriesController(req, res) {
   try {
     const categories = await ProductModel.distinct('category')
     const productByCategory = []
@@ -27,4 +27,4 @@ async function getAllCategories(req, res) {
   }
 }
 
-export default getAllCategories
+export default getAllCategoriesController

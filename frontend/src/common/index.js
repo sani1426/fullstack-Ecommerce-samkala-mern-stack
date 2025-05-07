@@ -33,7 +33,6 @@ const SummaryApi = {
 
     //  product Routes 
 
-
     CreateProduct : {
         url : `${backendDomain}/api/products/create`,
         method : "post"
@@ -48,6 +47,13 @@ const SummaryApi = {
     },
     GetCategories : {
         url : `${backendDomain}/api/products/all-categories`,
+        method : "get"
+    },
+
+    //  get Product By category 
+    
+    GetProductsByCategory : {
+        url : `${backendDomain}/api/products/get-Products`,
         method : "get"
     },
 }

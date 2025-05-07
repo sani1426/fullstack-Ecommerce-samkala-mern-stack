@@ -42,7 +42,7 @@ const Header = () => {
           <Logo w={70} h={40} />
         </Link>
 
-        <div className='hidden w-full max-w-sm items-center justify-between rounded-full border shadow-sm focus-within:shadow-md md:flex'>
+        <div className='hidden w-full max-w-sm items-center justify-between rounded-full border border-grown-50  shadow-sm focus-within:shadow-md md:flex'>
           <input
             type='text'
             placeholder='Search for Product'
@@ -56,7 +56,7 @@ const Header = () => {
         <div className='flex items-center gap-6'>
           <div className=''>
             {user ? (
-              <p>{user?.name}</p>
+              <p className='text-blurey-50'>{user?.name}</p>
             ) : (
               <Link
                 to='/login'
@@ -80,22 +80,22 @@ const Header = () => {
                 onClick={toggleDropMenu}
                 src={user?.profilePic}
                 alt=''
-                className='dropdown-trigger h-10 w-10 rounded-full'
+                className='dropdown-trigger h-10 w-10 rounded-full border-2 border-blurey-50'
               />
             ) : (
               <img
                 onClick={toggleDropMenu}
                 src={`${user?.gender === "men" ? "https://avatar.iran.liara.run/public/boy" : "https://avatar.iran.liara.run/public/girl"}`}
                 alt=''
-                className='dropdown-trigger h-10 w-10 rounded-full'
+                className='dropdown-trigger h-10 w-10 rounded-full border-2 border-blurey-50'
               />
             )}
             <div
-              className={`${menuOpen ? 'pointer-events-auto opacity-[1]' : 'pointer-events-none opacity-0'} top-15 absolute -left-8 rounded-lg shadow-md transition-all duration-300`}
+              className={`${menuOpen ? 'pointer-events-auto opacity-[1]' : 'pointer-events-none opacity-0'} top-15 absolute -left-8 rounded-lg shadow-md transition-all duration-300 z-50`}
             >
               <ul className='mt-2 flex flex-col text-nowrap rounded-lg bg-white text-sm'>
                 <li className='w-full px-8 py-3 transition-all duration-300 hover:bg-slate-200'>
-                  <Link to='/profile-panel'>Profile</Link>
+                  <Link className='text-blurey-50' to='/profile-panel'>Profile</Link>
                 </li>
                 <li
                   onClick={handleLogOut}
@@ -110,7 +110,7 @@ const Header = () => {
             <span>
               <FaCartShopping />
             </span>
-            <div className='flex-center absolute -right-3 -top-3 h-4 w-4 rounded-full bg-primary-500 p-1 text-white'>
+            <div className='flex-center absolute -right-3 -top-3 h-4 w-4 rounded-full bg-blurey-50 p-1 text-white'>
               <p className='text-xs'>3</p>
             </div>
           </div>
