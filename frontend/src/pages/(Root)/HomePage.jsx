@@ -1,8 +1,13 @@
+import BannerProduct from "../../components/(products)/BannerProduct"
+import CategoryList from "../../components/UI/CategoryList"
 
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    <CategoryList />
+    <BannerProduct />
+    </>
   )
 }
 

@@ -11,7 +11,7 @@ const router = express.Router()
 router.post("/create" ,authToken , uploadProductController)
 router.get("/" , getAllProductController)
 router.post("/edit-product/:id" ,authToken , EditProductController)
-router.get("/all-categories" ,authToken , getAllCategories)
+router.get("/all-categories"  , getAllCategories)
 
 export  default router
 

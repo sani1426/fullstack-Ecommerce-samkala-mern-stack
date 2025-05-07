@@ -10,6 +10,7 @@ import ProfilePanel from "./pages/(Root)/profilePanel"
 import AdminLayout from "./layouts/AdminLayout"
 import AllUsers from "./pages/(Admin)/AllUsers"
 import AllProducts from "./pages/(Admin)/AllProducts"
+import CategoryProduct from "./pages/(Root)/CategoryProduct"
 
 const router = createBrowserRouter([
   
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                     {
                         path : '/' ,
                         element : <HomePage />
+                    },
+                    {
+                        path : '/category/:name' ,
+                        element : <CategoryProduct />
                     },
                     {
                         path : '/profile-panel' ,

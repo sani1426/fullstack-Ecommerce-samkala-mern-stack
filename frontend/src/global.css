@@ -18,6 +18,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: poppins;
+  scroll-behavior: smooth;
 }
 body{
   @apply bg-slate-100
@@ -27,6 +28,10 @@ body{
   --font-poppins: poppins;
   --font-poppins-bold : poppins-bold;
   
+}
+
+.scrollbar-none::-webkit-scrollbar{
+  display: none;
 }
 
 
@@ -41,10 +46,10 @@ body{
 }
 
 .my-gradient {
-  @apply  bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200  
+  @apply  bg-gradient-to-br from-grown-50   to-grown-100   
 }
 .my-hover {
-  @apply bg-gradient-to-br from-primary-400  via-primary-300  to-primary-200   hover:from-primary-200  hover:via-primary-300  hover:to-primary-400  transition-all duration-500
+  @apply bg-gradient-to-br from-grown-50   to-grown-100   hover:opacity-80 hover:shadow-md shadow-grown-50  transition-all duration-500
 }
 
 

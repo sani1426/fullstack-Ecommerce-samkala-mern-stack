@@ -18,10 +18,17 @@ export default {
         coral: {
           500: '#15BF59',
         },
-
-        grey: {
-          600: '#545454', 
+        grown:{
+          50 : '#96F207',
+          100 : '#31D10D'
         },
+        blurey: {
+          50 : '#0075FF',
+          800 : '#000E1F'
+        },
+        yellowrey : {
+          50 : '#FFC700'
+        }
 
       },
       fontFamily: {
