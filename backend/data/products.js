@@ -4,7 +4,7 @@
   {
     productName: "boAt Airdopes 111",
     brandName : "boat" ,
-    category: "airpods",
+    category: "airpodes",
     productImages: ["/images/products/airpodes/boAt Airdopes 111 1.webp" , "/images/products/airpodes/boAt Airdopes 111 2.webp" ,  "/images/products/airpodes/boAt Airdopes 111 3.webp" ,  "/images/products/airpodes/boAt Airdopes 111 4.webp" ],
     price: 800,
     sellingPrice: 799,
@@ -14,7 +14,7 @@
   {
     productName: "boAt Airdopes 115",
     brandName : "boat" ,
-    category: "airpods",
+    category: "airpodes",
     productImages: ["/images/products/airpodes/boAt Airdopes 115 1.webp" , "/images/products/airpodes/boAt Airdopes 115 2.webp" ],
     price: 1900,
     sellingPrice: 1750,
@@ -24,7 +24,7 @@
   {
     productName: "boAt Airdopes 131 ",
     brandName : "boat" ,
-    category: "airpods",
+    category: "airpodefs",
     productImages: ["/images/products/airpodes/boAt Airdopes 131 1.webp" , "/images/products/airpodes/boAt Airdopes 131 2.webp" , "/images/products/airpodes/boAt Airdopes 131 3.webp" , "/images/products/airpodes/boAt Airdopes 131 4.webp" ],
     price: 2000,
     sellingPrice: 1890,
@@ -34,12 +34,22 @@
   {
     productName: "boAt TRebel Airdopes 431",
     brandName : "boat" ,
-    category: "airpods",
+    category: "airpodes",
     productImages: ["/images/products/airpodes/boAt TRebel Airdopes 431 1.webp" , "/images/products/airpodes/boAt TRebel Airdopes 431 2.webp" , "/images/products/airpodes/boAt TRebel Airdopes 431 3.webp" , "/images/products/airpodes/boAt TRebel Airdopes 431 4.webp" ],
     price: 5000,
     sellingPrice: 4650,
     description:
       "good airpod boAt TRebel Airdopes 431",
+  },
+  {
+    productName: "boAt Immortal 121",
+    brandName : "boat" ,
+    category: "airpodes",
+    productImages: ["/images/products/airpodes/boAt Immortal 121 1.webp" , "/images/products/airpodes/boAt Immortal 121 2.webp"  ],
+    price: 400,
+    sellingPrice: 350,
+    description:
+      "good airpod boAt Immortal 121",
   },
 
   //  camera
@@ -52,6 +62,36 @@
     sellingPrice: 14650,
     description:
       "good camera Canon EOS 5D Mark IV 30.4 MP Digital SLR Camera (Black) + EF 24-105mm is II USM Lens Kit 1",
+  },
+  {
+    productName: "Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black)",
+    brandName : "Canon" ,
+    category: "camera",
+    productImages: ["/images/products/camera/Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black) 1.jpg" , "/images/products/camera/Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black) 2.jpg" ,"/images/products/camera/Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black) 3.jpg" ,"/images/products/camera/Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black) 4.jpg" ],
+    price: 150000,
+    sellingPrice: 146050,
+    description:
+      "good camera Canon EOS 200D II 24.1MP Digital SLR Camera + EF-S 18-55mm f4 is STM Lens (Black)",
+  },
+  {
+    productName: "Canon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens",
+    brandName : "Canon" ,
+    category: "camera",
+    productImages: ["/images/products/camera/Canon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens 2.jpg" , "/images/products/camera/Canon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens 3.jpg" ,"/images/products/camera/Canon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens 4.jpg" ],
+    price: 14300,
+    sellingPrice: 14050,
+    description:
+      "good cameraCanon EOS 1500D 24.1 Digital SLR Camera (Black) with EF S18-55 is II Lens",
+  },
+  {
+    productName: "CP PLUS 3MP Full HD Smart Wi-fi CCTV Home Security Camera",
+    brandName : "Canon" ,
+    category: "camera",
+    productImages: ["/images/products/camera/CP PLUS 3MP Full HD Smart Wi-fi CCTV Home Security Camera 1.jpg" ,"/images/products/camera/CP PLUS 3MP Full HD Smart Wi-fi CCTV Home Security Camera 2.jpg" , "/images/products/camera/CP PLUS 3MP Full HD Smart Wi-fi CCTV Home Security Camera 3.jpg"  ],
+    price: 12300,
+    sellingPrice: 12250,
+    description:
+      "good camera CP PLUS 3MP Full HD Smart Wi-fi CCTV Home Security Camera 1",
   },
 
   // earphones //
@@ -66,6 +106,36 @@
     description:
       "good earphones boAt Rockerz 103 Pro",
   },
+  {
+    productName: "boAt Rockerz 258 Pro+",
+    brandName : "boat" ,
+    category: "earphones",
+    productImages: ["/images/products/earphones/boAt Rockerz 258 Pro+ 1.webp" ,"/images/products/earphones/boAt Rockerz 258 Pro+ 2.webp" , "/images/products/earphones/boAt Rockerz 258 Pro+ 3.webp" ,"/images/products/earphones/boAt Rockerz 258 Pro+ 4.webp" ],
+    price: 8000,
+    sellingPrice: 7950,
+    description:
+      "good earphones boAt Rockerz 258 Pro+",
+  },
+  {
+    productName: "boAt Rockerz 330",
+    brandName : "boat" ,
+    category: "earphones",
+    productImages: ["/images/products/earphones/boAt Rockerz 330 1.webp" , "/images/products/earphones/boAt Rockerz 330 2.webp" ,"/images/products/earphones/boAt Rockerz 330 3.webp" ,"/images/products/earphones/boAt Rockerz 330 4.webp" ],
+    price: 3000,
+    sellingPrice: 2850,
+    description:
+      "good earphones boAt Rockerz 330 ",
+  },
+  {
+    productName: "boAt Rockerz 330 Pro",
+    brandName : "boat" ,
+    category: "earphones",
+    productImages: ["/images/products/earphones/boAt Rockerz 330 Pro 1.webp" , "/images/products/earphones/boAt Rockerz 330 Pro 2.webp" , "/images/products/earphones/boAt Rockerz 330 Pro 3.webp" , "/images/products/earphones/boAt Rockerz 330 Pro 4.webp" ],
+    price: 9000,
+    sellingPrice: 8650,
+    description:
+      "good earphones boAt Rockerz 330 Pro 1",
+  },
 
   //  mobile
   {
@@ -78,6 +148,36 @@
     description:
       "good mobile realme 7 Pro",
   },
+  {
+    productName: "realme 9 5G (Stargaze White, 128 GB) (6 GB RAM) ",
+    brandName : "realm" ,
+    category: "mobile",
+    productImages: ["/images/products/mobile/realme 9 5G (Stargaze White, 128 GB) (6 GB RAM) 1.webp" , "/images/products/mobile/realme 9 5G (Stargaze White, 128 GB) (6 GB RAM) 2.webp" ,"/images/products/mobile/realme 9 5G (Stargaze White, 128 GB) (6 GB RAM) 3.webp" ,"/images/products/mobile/realme 9 5G (Stargaze White, 128 GB) (6 GB RAM) 4.webp"],
+    price: 22000,
+    sellingPrice: 21650,
+    description:
+      "good mobile realme 9 5G (Stargaze White, 128 GB) (6 GB RAM)",
+  },
+  {
+    productName: "realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) ",
+    brandName : "realm" ,
+    category: "mobile",
+    productImages: ["/images/products/mobile/realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) 1.webp" , "/images/products/mobile/realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) 2webp." ,"/images/products/mobile/realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) 3.webp", "/images/products/mobile/realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) 4.webp"],
+    price: 20000,
+    sellingPrice: 19650,
+    description:
+      "good mobile realme 9 Pro 5G (Midnight Black, 128 GB) (6 GB RAM) ",
+  },
+  {
+    productName: "SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM)",
+    brandName : "SAMSUNG" ,
+    category: "mobile",
+    productImages: ["/images/products/mobile/SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM) 1.webp" , "/images/products/mobile/SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM) 2.webp" , "/images/products/mobile/SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM) 3.webp"   ,"/images/products/mobile/SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM) 4.webp" ],
+    price: 52000,
+    sellingPrice: 50650,
+    description:
+      "good mobile SAMSUNG Galaxy Z Flip3 5G (Cream, 128 GB) (8 GB RAM) ",
+  },
 
 //   mouse
   {
@@ -89,6 +189,26 @@
     sellingPrice: 10650,
     description:
       "good mouse ASUS Marshmallow - Silent, Adj. DPI, Multi-Mode, With Solar Cover Wireless Optical Mouse (2.4GHz Wireless, Bluetooth, Quiet Blue) 1",
+  },
+  {
+    productName: "DELL MS 116 Wired Optical Mouse (USB, Black)",
+    brandName : "DELL" ,
+    category: "mouse",
+    productImages: ["/images/products/mouse/DELL MS 116 Wired Optical Mouse (USB, Black) 1.webp" , "/images/products/mouse/DELL MS 116 Wired Optical Mouse (USB, Black) 2.webp" , "/images/products/mouse/DELL MS 116 Wired Optical Mouse (USB, Black) 3.webp" ,"/images/products/mouse/DELL MS 116 Wired Optical Mouse (USB, Black) 4.webp"],
+    price: 9000,
+    sellingPrice: 8650,
+    description:
+      "good mouse DELL MS 116 Wired Optical Mouse (USB, Black)",
+  },
+  {
+    productName: "Zoook Bomber Wired Optical Mouse (USB 2.0, Black)",
+    brandName : "Zoook Bomber" ,
+    category: "mouse",
+    productImages: ["/images/products/mouse/Zoook Bomber Wired Optical Mouse (USB 2.0, Black) 1.webp" ,"/images/products/mouse/Zoook Bomber Wired Optical Mouse (USB 2.0, Black) 2.webp" , "/images/products/mouse/Zoook Bomber Wired Optical Mouse (USB 2.0, Black) 3.webp" , "/images/products/mouse/Zoook Bomber Wired Optical Mouse (USB 2.0, Black) 4.webp"],
+    price: 7000,
+    sellingPrice: 6650,
+    description:
+      "good mouse Zoook Bomber Wired Optical Mouse (USB 2.0, Black)",
   },
 
 //   printers

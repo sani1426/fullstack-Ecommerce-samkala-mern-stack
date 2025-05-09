@@ -15,13 +15,13 @@ const content = <div style={contentStyle} />;
 const Spinner = () => (
   <Flex gap="middle" vertical>
     <Flex className='flex items-center justify-center' gap="middle">
-      <Spin   tip="Loading" size="large">
+      <Spin   tip="Loading" size="default">
         {content}
       </Spin>
-      <Spin  tip="Loading" size="large">
+      <Spin  tip="Loading" size="default">
         {content}
       </Spin>
-      <Spin  tip="Loading" size="large">
+      <Spin  tip="Loading" size="default">
         {content}
       </Spin>
     </Flex>
