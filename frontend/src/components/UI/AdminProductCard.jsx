@@ -13,7 +13,7 @@ className="w-[70px] h-[70px] object-contain"
       />
       </div>
      
-      <h1>{data?.productName}</h1>
+      <h1 className="text-ellipsis line-clamp-2">{data?.productName}</h1>
 <div className="flex-between w-full gap-8">
   <p>${data?.sellingPrice.toLocaleString()}</p>
 

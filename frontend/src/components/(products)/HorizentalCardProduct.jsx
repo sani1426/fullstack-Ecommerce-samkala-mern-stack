@@ -31,7 +31,6 @@ const HorizentalCardProduct = ({category , heading}) => {
       scrollElement.current.scrollLeft -= 300
   }
 
-
   return (
     <div className='container mx-auto px-4 my-6 relative'>
 
@@ -46,7 +45,7 @@ const HorizentalCardProduct = ({category , heading}) => {
    {   loading ? (
         loadingList.map((product,index)=>{
             return(
-                <div className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex'>
+                <div key={index} className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex'>
                     <div className='bg-slate-200 h-full p-4 min-w-[120px] md:min-w-[145px] animate-pulse'>
 
                     </div>
@@ -65,9 +64,9 @@ const HorizentalCardProduct = ({category , heading}) => {
    ) : (
     data.map((product,index)=>{
         return(
-            <Link key={index} to={`/products/${product?._id}`} className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex'>
-                <div className='bg-slate-200 h-full p-4 min-w-[120px] md:min-w-[145px]'>
-                    <img src={product?.productImages[0]} className='object-scale-down h-full hover:scale-110 transition-all'/>
+            <Link key={index} to={`/products/${product?._id}`} className='w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-lg  shadow-lg  hover:shadow-2xl transition-all flex'>
+                <div className='bg-slate-200 h-full p-4 min-w-[120px] md:min-w-[145px] rounded-lg'>
+                    <img src={product?.productImages[0]} className='object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply'/>
                 </div>
                 <div className='p-4 grid'>
                     <h2 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black'>{product?.productName}</h2>

@@ -1,7 +1,7 @@
 
 export const category = [
     {
-        id: 1 , lable: "Airpods" , value:"airpods"
+        id: 1 , lable: "Airpodes" , value:"airpodes"
     },
     {
         id: 2 , lable: "Camera" , value:"camera"

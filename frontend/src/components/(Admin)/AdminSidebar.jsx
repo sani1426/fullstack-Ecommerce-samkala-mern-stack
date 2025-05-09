@@ -7,7 +7,7 @@ import { useAppContext } from '../../context/AppContext';
 const AdminSidebar = () => {
     const { user } = useAppContext();
   return (
-    <aside className='shadow-costume hidden md:flex md:flex-col fixed h-screen w-80 bg-slate-50'>
+    <aside className='shadow-costume hidden md:flex md:flex-col fixed h-screen w-80 bg-slate-50 pt-16'>
     <div className='h-32 bg-gray-50'>
       <div className='flex-center gap-4 px-4 py-2'>
         {user?.profilePic ? (

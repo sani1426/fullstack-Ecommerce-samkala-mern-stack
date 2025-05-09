@@ -21,9 +21,19 @@
   scroll-behavior: smooth;
 }
 body{
-  @apply bg-slate-100
+  animation: fade 1.5s ;
+  background-color: #f1f5f9;
+
 }
 
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 :root {
   --font-poppins: poppins;
   --font-poppins-bold : poppins-bold;
@@ -73,4 +83,28 @@ body{
 }
 .user-table td{
   @apply border text-base py-2
+}
+
+
+
+/* ////////////////////// */
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #013304; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#96F207; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0075FF; 
 }

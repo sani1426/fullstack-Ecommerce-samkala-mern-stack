@@ -1,15 +1,10 @@
-
-
-import React from 'react'
-import { useParams } from 'react-router'
+import React from 'react';
+import { useParams } from 'react-router';
 
 const CategoryProduct = () => {
+  const { name } = useParams();
 
-    const {name} = useParams()
-    
-  return (
-    <div>CategoryProduct {name}</div>
-  )
-}
+  return <div>CategoryProduct {name}</div>;
+};
 
-export default CategoryProduct
+export default CategoryProduct;

@@ -54,8 +54,8 @@ const AllUsers = () => {
         <tbody className='text-center'>
           {allUsers.map((user, index) => {
             return (
-              <tr key={user?._id}>
-                <td>{index + 1}</td>
+              <tr key={user?._id} >
+                <td className='bg-black text-white'>{index + 1}</td>
                 <td>{user?.name}</td>
                 <td>{user?.email}</td>
                 <td>{user?.gender}</td>

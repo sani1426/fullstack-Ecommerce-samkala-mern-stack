@@ -24,7 +24,7 @@ const AllProducts = () => {
     <div className='md:pl-80'>
       <div className=''>
         <div className='flex-between bg-white p-5'>
-          <h1>All Products</h1>
+          <h1 className='text-2xl font-bold uppercase'>All Products</h1>
           <UploadProducts fetchAll={fetchAllProducts} />
 
         
