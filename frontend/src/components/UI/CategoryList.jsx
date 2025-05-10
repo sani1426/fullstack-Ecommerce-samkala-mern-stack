@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import SummaryApi from '../../common';
 import { Link } from 'react-router-dom';
 import Spinner from '../../components/UI/Spinner'
+import useFetchData from '../../hooks/useFetchData';
+
 
 const CategoryList = () => {
   const [categoryProduct, setCategoryProduct] = useState([]);
@@ -9,11 +11,9 @@ const CategoryList = () => {
 
   const fetchAllCategory = async () => {
     setLoading(true);
-    const response = await fetch(SummaryApi.GetCategories.url);
-    const result = await response.json();
-
+    const {result} = await useFetchData(SummaryApi.GetCategories.url , 'get')
     setLoading(false);
-    setCategoryProduct(result.data);
+    setCategoryProduct(result);
   };
 
   useEffect(() => {

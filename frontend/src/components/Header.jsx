@@ -7,6 +7,7 @@ import { useAppContext } from '../context/AppContext';
 import { toast } from 'sonner';
 import SummaryApi from '../common';
 import { useEffect, useState } from 'react';
+import ProfileDropdown from './UI/ProfileDropDown.jsx/ProfileDropdown';
 
 const Header = () => {
   const { user } = useAppContext();
@@ -18,22 +19,7 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLogOut = async () => {
-    const fetchData = await fetch(SummaryApi.LogOut.url, {
-      method: SummaryApi.LogOut.method,
-      credentials: 'include',
-    });
 
-    const data = await fetchData.json();
-
-    if (data.success) {
-      toast.success('logged out success');
-    }
-    if (data.error) {
-      toast.error(data.message);
-    }
-    setMenuOpen(false);
-  };
 
   return (
     <header className='h-16 bg-white shadow-md fixed w-full z-50'>
@@ -91,9 +77,9 @@ const Header = () => {
               />
             )}
             <div
-              className={`${menuOpen ? 'pointer-events-auto opacity-[1]' : 'pointer-events-none opacity-0'} top-15 absolute -left-8 rounded-lg shadow-md transition-all duration-300 z-50`}
+              className={`${menuOpen ? 'pointer-events-auto opacity-[1]' : 'pointer-events-none opacity-0'} top-14 absolute  -right-6 rounded-lg shadow-md transition-all duration-300 z-50`}
             >
-              <ul className='mt-2 flex flex-col text-nowrap rounded-lg bg-white text-sm'>
+              {/* <ul className='mt-2 flex flex-col text-nowrap rounded-lg bg-white text-sm'>
                 <li className='w-full px-8 py-3 transition-all duration-300 hover:bg-slate-200'>
                   <Link className='text-blurey-50' to='/profile-panel'>Profile</Link>
                 </li>
@@ -103,7 +89,8 @@ const Header = () => {
                 >
                   logOut
                 </li>
-              </ul>
+              </ul> */}
+              <ProfileDropdown user={user} />
             </div>
           </div>
           <div className='relative cursor-pointer text-2xl'>

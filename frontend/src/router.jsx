@@ -11,6 +11,7 @@ import AdminLayout from "./layouts/AdminLayout"
 import AllUsers from "./pages/(Admin)/AllUsers"
 import AllProducts from "./pages/(Admin)/AllProducts"
 import CategoryProduct from "./pages/(Root)/CategoryProduct"
+import ProductDetail from "./pages/(Root)/ProductDetail"
 
 const router = createBrowserRouter([
   
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
                     {
                         path : '/profile-panel' ,
                         element : <ProfilePanel />
+                    },
+                    {
+                        path : '/products/:id' ,
+                        element : <ProductDetail />
                     },
                 ]
             },

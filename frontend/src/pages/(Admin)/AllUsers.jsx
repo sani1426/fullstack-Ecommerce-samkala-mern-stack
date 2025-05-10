@@ -5,21 +5,17 @@ import moment from 'moment';
 import { MdDelete } from 'react-icons/md';
 
 import UpdateUserModal from '../../components/(Admin)/UpdateUserModal.jsx';
+import useFetchData from '../../hooks/useFetchData.js';
 
 const AllUsers = () => {
   const [allUsers, setAllUsers] = useState([]);
 
 
   const fetchAllUsers = async () => {
-    const result = await fetch(SummaryApi.AllUsers.url, {
-      methode: SummaryApi.AllUsers.method,
-      credentials: 'include',
-    });
+    const {result} = await useFetchData(SummaryApi.AllUsers.url ,SummaryApi.AllUsers.method )
 
-    const response = await result.json();
-    console.log(response);
-    setAllUsers(response.data);
-    console.log(allUsers);
+    setAllUsers(result);
+
   };
 
 

@@ -58,6 +58,9 @@ body{
 .my-gradient {
   @apply  bg-gradient-to-br from-grown-50   to-grown-100   
 }
+.my-button-gradient {
+  @apply  border-2  rounded-md px-3 py-1 min-w-[120px] font-medium bg-grown-100 hover:border-grown-100 text-white  hover:bg-white hover:text-grown-100 transition-all duration-500
+}
 .my-hover {
   @apply bg-gradient-to-br from-grown-50   to-grown-100   hover:opacity-80 hover:shadow-md shadow-grown-50  transition-all duration-500
 }

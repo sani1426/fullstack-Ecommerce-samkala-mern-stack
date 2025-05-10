@@ -8,6 +8,7 @@ import { MdDelete } from "react-icons/md";
 import SummaryApi from '../../common/index';
 import {toast} from 'sonner'
 import { MdEdit } from 'react-icons/md';
+import useFetchData from '../../hooks/useFetchData';
 
 
 
@@ -88,17 +89,7 @@ const handleUploadProduct = async(e) => {
   {/**upload product */}
   const handleSubmit = async(e) =>{
     e.preventDefault()
-    
-    const response = await fetch(`${SummaryApi.EditProduct.url}/${productData._id}`,{
-      method : SummaryApi.EditProduct.method,
-      credentials : 'include',
-      headers : {
-        "content-type" : "application/json"
-      },
-      body : JSON.stringify(data)
-    })
-
-    const responseData = await response.json()
+    const {responseData} = await useFetchData(`${SummaryApi.EditProduct.url}/${productData._id}` ,SummaryApi.EditProduct.method , data)
 
     if(responseData.success){
         toast.success(responseData?.message)

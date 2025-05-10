@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
-import { Modal } from 'antd';
-import { category } from '../../helpers/productCategory';
-import { FaCloudUploadAlt } from 'react-icons/fa';
-import uploadImage from '../../helpers/uploadImage';
-import DisplayImage from '../UI/DisplayImage';
-import { MdDelete } from 'react-icons/md';
-import SummaryApi from '../../common/index';
-import { toast } from 'sonner';
+import React, { useState } from 'react'
+import { Modal } from 'antd'
+import { category } from '../../helpers/productCategory'
+import { FaCloudUploadAlt } from 'react-icons/fa'
+import uploadImage from '../../helpers/uploadImage'
+import DisplayImage from '../UI/DisplayImage'
+import { MdDelete } from 'react-icons/md'
+import SummaryApi from '../../common/index'
+import { toast } from 'sonner'
+import useFetchData from '../../hooks/useFetchData'
 
-const UploadModal = ({fetchAll}) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const UploadModal = ({ fetchAll }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const showModal = () => {
-    setIsModalOpen(true);
-  };
+    setIsModalOpen(true)
+  }
   const handleOk = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
   const handleCancel = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
 
   const [data, setData] = useState({
     productName: '',
@@ -28,63 +29,57 @@ const UploadModal = ({fetchAll}) => {
     description: '',
     price: '',
     selling: '',
-  });
+  })
 
-  const [uploadProductImageFile, setUploadProductImageFile] = useState('');
+  const [uploadProductImageFile, setUploadProductImageFile] = useState('')
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
 
     setData((preve) => {
       return {
         ...preve,
         [name]: value,
-      };
-    });
-  };
+      }
+    })
+  }
 
   const handleUploadImage = async (e) => {
-    const file = e.target.files[0];
-    setUploadProductImageFile(file.name);
+    const file = e.target.files[0]
+    setUploadProductImageFile(file.name)
 
-    const uploadImageCloudinary = await uploadImage(file);
+    const uploadImageCloudinary = await uploadImage(file)
 
     setData((preve) => {
       return {
         ...preve,
         productImages: [...preve.productImages, uploadImageCloudinary.url],
-      };
-    });
-  };
+      }
+    })
+  }
 
-  const [fullScreenImage, setFullScreenImage] = useState('');
-  const [openFullScreen, setOpenFullScreen] = useState(false);
+  const [fullScreenImage, setFullScreenImage] = useState('')
+  const [openFullScreen, setOpenFullScreen] = useState(false)
 
   const handleDeleteProductImage = async (index) => {
-    const newProductImage = [...data.productImages];
-    newProductImage.splice(index, 1);
+    const newProductImage = [...data.productImages]
+    newProductImage.splice(index, 1)
 
     setData((preve) => {
       return {
         ...preve,
         productImages: [...newProductImage],
-      };
-    });
-  };
+      }
+    })
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const response = await fetch(SummaryApi.CreateProduct.url, {
-      method: SummaryApi.CreateProduct.method,
-      credentials: 'include',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    const responseData = await response.json();
+    e.preventDefault()
+    const { responseData } = await useFetchData(
+      SummaryApi.CreateProduct.url,
+      SummaryApi.CreateProduct.method,
+      data
+    )
 
     if (responseData.success) {
       toast.success(responseData?.message, {
@@ -92,9 +87,9 @@ const UploadModal = ({fetchAll}) => {
           background: 'green',
           color: 'white',
         },
-      });
+      })
       fetchAll()
-      setIsModalOpen(false);
+      setIsModalOpen(false)
     }
 
     if (responseData.error) {
@@ -103,9 +98,9 @@ const UploadModal = ({fetchAll}) => {
           background: 'red',
           color: 'black',
         },
-      });
+      })
     }
-  };
+  }
 
   return (
     <>
@@ -171,7 +166,7 @@ const UploadModal = ({fetchAll}) => {
                   <option value={el.value} key={el.value + index}>
                     {el.lable}
                   </option>
-                );
+                )
               })}
             </select>
           </div>
@@ -206,8 +201,8 @@ const UploadModal = ({fetchAll}) => {
                     height={70}
                     className='cursor-pointer border bg-slate-100'
                     onClick={() => {
-                      setOpenFullScreen(true);
-                      setFullScreenImage(item);
+                      setOpenFullScreen(true)
+                      setFullScreenImage(item)
                     }}
                   />
                   <div
@@ -279,7 +274,7 @@ const UploadModal = ({fetchAll}) => {
         )}
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default UploadModal;
+export default UploadModal

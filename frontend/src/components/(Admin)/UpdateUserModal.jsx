@@ -6,6 +6,7 @@ import { userGender } from '../../common/role.js'
 
 import SummaryApi from '../../common/index.js';
 import { MdEdit } from 'react-icons/md';
+import useFetchData from '../../hooks/useFetchData.js';
 
 const UpdateUserModal = ({
     name , email , role , gender ,userId , getAllUsers
@@ -36,28 +37,16 @@ const UpdateUserModal = ({
       setUseGender(e.target.value)
   }
 
+
+
   const updateUserRole = async ()=> {
-              const  result = await fetch(SummaryApi.UpdateUser.url , {
-                  method : SummaryApi.UpdateUser.method ,
-                  credentials : "include",
-                  headers : {
-                      "content-type" : "application/json"
-                  },
-
-                      body : JSON.stringify({
-                          userId : userId ,
-                          role : useRole ,
-                          gender : useGender
-         
-                      })
-                      
-              })
-
-              const response = await result.json()
+              const {responseData} = await useFetchData(SummaryApi.UpdateUser.url , SummaryApi.UpdateUser.method , {
+                userId : userId ,
+                role : useRole ,
+                gender : useGender
+              } )
               getAllUsers()
               setIsModalOpen(false);
-             
-          
   }
 
 

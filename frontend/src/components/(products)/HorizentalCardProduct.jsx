@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import fetchProductByCategory from "../../helpers/getProductByCategoryFetch"
+
 import {Link} from 'react-router-dom'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
+import addToCart from "../../helpers/addToCard"
+import useFetchData from "../../hooks/useFetchData"
+import SummaryApi from "../../common"
 
 
 const HorizentalCardProduct = ({category , heading}) => {
@@ -14,10 +17,10 @@ const HorizentalCardProduct = ({category , heading}) => {
 
     const fetchData = async ()=>{
       setLoading(true)
-      const categoryProduct = await fetchProductByCategory(category);
+      const {result} = await useFetchData(`${SummaryApi.GetProductsByCategory.url}/${category}` , "get")
       setLoading(false)
 
-      setData(categoryProduct?.data)
+      setData(result)
     }
 
     useEffect(() => {
@@ -75,7 +78,7 @@ const HorizentalCardProduct = ({category , heading}) => {
                         <p className='text-blurey-50 font-medium'>{ product?.sellingPrice.toLocaleString() }</p>
                         <p className='text-primary-500 line-through text-sm'>{ product?.price.toLocaleString()  }</p>
                     </div>
-                    <button className='text-sm my-hover text-white px-3 py-0.5 rounded-full' >Add to Cart</button>
+                    <button className='text-sm my-hover text-white px-3 py-0.5 rounded-full' onClick={(e)=> addToCart(e,product?._id)}>Add to Cart</button>
                 </div>
             </Link>
         )

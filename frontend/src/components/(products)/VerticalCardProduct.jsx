@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import fetchProductByCategory from '../../helpers/getProductByCategoryFetch';
+
 import { Link } from 'react-router-dom';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
+import useFetchData from '../../hooks/useFetchData';
+import SummaryApi from '../../common';
 
 const VerticalCardProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
@@ -13,10 +15,10 @@ const VerticalCardProduct = ({ category, heading }) => {
 
   const fetchData = async () => {
     setLoading(true);
-    const categoryProduct = await fetchProductByCategory(category);
+    const {result} = await useFetchData(`${SummaryApi.GetProductsByCategory.url}/${category}` , "get")
     setLoading(false);
 
-    setData(categoryProduct?.data);
+    setData(result);
   };
 
   useEffect(() => {
@@ -99,7 +101,7 @@ const VerticalCardProduct = ({ category, heading }) => {
                         {product?.price.toLocaleString()}
                       </p>
                     </div>
-                    <button className='my-hover rounded-md px-3 py-2 text-sm text-white'>
+                    <button className='my-hover rounded-md px-3 py-2 text-sm text-white'  onClick={(e)=> addToCart(e,product?._id)}>
                       Add to Cart
                     </button>
                   </div>

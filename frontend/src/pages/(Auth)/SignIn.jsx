@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../components/logo';
 import { toast } from 'sonner';
 import SummaryApi from '../../common/index.js';
+import useFetchData from '../../hooks/useFetchData';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -23,26 +24,16 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const {responseData} = await useFetchData(SummaryApi.SignIn.url , SummaryApi.SignIn.method , data)
 
-    const dataResponse = await fetch(SummaryApi.SignIn.url, {
-      method: SummaryApi.SignIn.method,
-      credentials: 'include',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result = await dataResponse.json();
-
-    if (result.error) {
+    if (responseData.error) {
       toast.error(result.message, {
         style: {
           background: 'red',
         },
       });
     }
-    if (result.success) {
+    if (responseData.success) {
       toast.success('login successfully ✨✨✨', {
         style: {
           background: 'green',

@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 import UploadProducts from '../../components/(Admin)/UploadProducts';
 import SummaryApi from '../../common';
 import AdminProductCard from '../../components/UI/AdminProductCard';
+import useFetchData from '../../hooks/useFetchData';
 
 const AllProducts = () => {
 
   const [allProductsData , setAllProductsData]=useState([]);
 
   const fetchAllProducts = async ()=> {
-    const responseData = await fetch(SummaryApi.GetAllProduct.url)
+    const {result} = await useFetchData(SummaryApi.GetAllProduct.url , 'get')
 
-    const result = await responseData.json()
-
-    setAllProductsData(result.data)
+    setAllProductsData(result)
   }
 
   useEffect(() => {

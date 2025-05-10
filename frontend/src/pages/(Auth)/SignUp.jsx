@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { imageToBase } from '../../helpers/imageToBase.js';
-import { toast } from 'sonner';
-import SummaryApi from '../../common/index.js';
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { imageToBase } from '../../helpers/imageToBase.js'
+import { toast } from 'sonner'
+import SummaryApi from '../../common/index.js'
+import useFetchData from '../../hooks/useFetchData.js'
 
 const SignUp = () => {
-
   const navigate = useNavigate()
   const [data, setData] = useState({
     name: '',
@@ -13,68 +13,67 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
     profilePic: '',
-    gender : "men"
-  });
+    gender: 'men',
+  })
 
   const handleOnChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setData((prev) => {
       return {
         ...prev,
         [name]: value,
-      };
-    });
-    console.log(data);
-  };
+      }
+    })
+    console.log(data)
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (data.password === data.confirmPassword) {
-      const dataResponse = await fetch(SummaryApi.SignUp.url, {
-        method: SummaryApi.SignUp.method,
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const newdata = await dataResponse.json();
-      if (newdata.success) {
-        toast.success('succesfully registered ✨✨✨' ,  { style: {
-          background: 'green',
-          color : 'white'
-        }});
+      const { responseData } = await useFetchData(
+        SummaryApi.SignUp.url,
+        SummaryApi.SignUp.method,
+        data
+      )
+      if (responseData.success) {
+        toast.success('succesfully registered ✨✨✨', {
+          style: {
+            background: 'green',
+            color: 'white',
+          },
+        })
         setTimeout(() => {
           navigate('/login')
-        }, 1000);
-
+        }, 1000)
       }
-      if (newdata.error) {
-        toast.error(newdata.message ,  { style: {
-          background: 'red',
-        }});
+      if (responseData.error) {
+        toast.error(newdata.message, {
+          style: {
+            background: 'red',
+          },
+        })
       }
- 
     } else {
-      toast.error('please check password and confirm password', { style: {
-        background: 'red',
-      }});
+      toast.error('please check password and confirm password', {
+        style: {
+          background: 'red',
+        },
+      })
     }
-  };
+  }
 
   const handleUpload = async (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]
 
-    const imagePic = await imageToBase(file);
+    const imagePic = await imageToBase(file)
     setData((prev) => {
       return {
         ...prev,
         profilePic: imagePic,
-      };
-    });
-  };
-
+      }
+    })
+  }
 
   return (
     <section
@@ -172,14 +171,19 @@ const SignUp = () => {
                 />
               </div>
             </div>
-            <div className="grid my-3 gap-1">
-              <label className='text-lg' htmlFor="gender">gender :</label>
+            <div className='grid my-3 gap-1'>
+              <label className='text-lg' htmlFor='gender'>
+                gender :
+              </label>
               <select
-              value={data.gender}
-              onChange={handleOnChange}
-               className='py-2 px-4 bg-gray-100' name="gender" id="gender">
-                <option  value="men">men</option>
-                <option  value="women">women</option>
+                value={data.gender}
+                onChange={handleOnChange}
+                className='py-2 px-4 bg-gray-100'
+                name='gender'
+                id='gender'
+              >
+                <option value='men'>men</option>
+                <option value='women'>women</option>
               </select>
             </div>
 
@@ -200,7 +204,7 @@ const SignUp = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp
